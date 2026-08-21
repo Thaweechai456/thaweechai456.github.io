@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ทวีชัย นามฮาด - Portfolio</title>
+    <title>THAWEECHAI NAMHAD | Portfolio & Resume</title>
+    <meta name="description" content="Portfolio of Thaweechai Namhad - Information Technology student at UDRU, Frontend Developer & QA Intern">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        :root {
+            /* Palette inspired by the Resume header & sleek editorial layout */
+            --header-bg: #2d333b;
+            --header-darker: #22272e;
+            --header-text: #ffffff;
+            --header-subtext: #adbac7;
+            
+            --bg-primary: #1c2128;
+            --bg-secondary: #22272e;
+            --bg-card: #2d333b;
+            --bg-card-hover: #373e47;
+            --border-color: #444c56;
+            --border-light: #373e47;
+            
+            --text-primary: #f0f6fc;
+            --text-secondary: #adbac7;
+            --text-muted: #768390;
+            
+            --accent: #539bf5;
+            --accent-gradient: linear-gradient(135deg, #444c56 0%, #2d333b 100%);
+            --accent-glow: rgba(83, 155, 245, 0.2);
+            --badge-bg: rgba(83, 155, 245, 0.12);
+            --badge-text: #539bf5;
+            --badge-border: rgba(83, 155, 245, 0.3);
+            
+            --hero-banner: #343a40;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --header-bg: #2f3542;
+            --header-darker: #24292e;
+            --header-text: #ffffff;
+            --header-subtext: #d1d5db;
+            
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --border-color: #e2e8f0;
+            --border-light: #edf2f7;
+            
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            
+            --accent: #2563eb;
+            --accent-gradient: linear-gradient(135deg, #2f3542 0%, #1e293b 100%);
+            --accent-glow: rgba(37, 99, 235, 0.15);
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --badge-border: #bfdbfe;
+            
+            --hero-banner: #2f3542;
+            --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.08);
+        }
 
         * {
             margin: 0;
@@ -14,666 +89,2002 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
-            min-height: 100vh;
+            font-family: 'Plus Jakarta Sans', 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.65;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            background: rgba(20, 20, 20, 0.95);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            border-bottom: 1px solid #333;
+        /* Top Notification / Quick Bar */
+        .top-bar {
+            background-color: var(--header-darker);
+            color: var(--header-subtext);
+            font-size: 0.85rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .top-bar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .logo {
+        .top-info-items {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .logo-text h1 {
-            font-size: 1.3em;
-            color: #fff;
-        }
-
-        .logo-text p {
-            font-size: 0.85em;
-            color: #999;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #b0b0b0;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 10px;
+        .top-info-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        nav a:hover {
-            color: #667eea;
+        .top-info-item i {
+            color: var(--accent);
         }
 
-        /* Container */
+        .top-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Language Toggle & Theme Toggle */
+        .lang-btn, .theme-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover, .theme-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Main Navigation */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-secondary);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 24px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: rgba(25, 25, 25, 0.95);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            margin: 40px auto;
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+        }
+
+        .brand-text h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+            background: var(--bg-card-hover);
+        }
+
+        .nav-resume-btn {
+            background: var(--header-bg);
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.88rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-resume-btn:hover {
+            background: #1e242c;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* ================= RESUME HEADER HERO BANNER ================= */
+        .resume-hero-banner {
+            background: linear-gradient(180deg, #2d333b 0%, #22272e 100%);
+            color: #ffffff;
+            padding: 60px 0 50px 0;
+            position: relative;
+            border-bottom: 3px solid var(--border-color);
+            box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="light"] .resume-hero-banner {
+            background: linear-gradient(180deg, #2f3542 0%, #252a34 100%);
+            color: #ffffff;
+        }
+
+        .resume-hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .resume-avatar-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .resume-avatar {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            display: block;
+            background-color: #ffffff;
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: #10b981;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--header-bg);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ffffff;
+            animation: pulseDot 1.8s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .resume-hero-details {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .resume-hero-details h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 6px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .resume-hero-details h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--header-subtext);
+            margin-bottom: 20px;
+        }
+
+        .hero-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .hero-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #f1f5f9;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #1e293b;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        /* ================= MAIN CONTENT LAYOUT ================= */
+        .main-layout {
+            padding: 48px 0 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 32px;
+        }
+
+        /* Section Styling */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .section-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-light);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-            border: 1px solid #333;
+            letter-spacing: 0.3px;
         }
 
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero h2 {
-            font-size: 2.5em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            color: #b0b0b0;
-            margin-bottom: 20px;
-        }
-
-        .hero-tags {
+        .section-title-left {
             display: flex;
+            align-items: center;
             gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
         }
 
-        .tag {
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+        .section-title-left i {
+            color: var(--accent);
+            font-size: 1.2rem;
         }
 
-        .hero-image {
-            flex: 0 0 250px;
-            text-align: center;
+        /* Sidebar: Contact List */
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
-        .profile-pic {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 5px solid #667eea;
-            object-fit: cover;
-            background: rgba(25, 25, 25, 0.8);
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            background: var(--badge-bg);
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
-            color: #888;
-            font-size: 0.9em;
-            pointer-events: none;
-            user-select: none;
-            padding: 20px;
-            text-align: center;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
 
-        /* Section */
-        .section {
-            background: rgba(25, 25, 25, 0.95);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            border: 1px solid #333;
+        .contact-info {
+            flex: 1;
+            min-width: 0;
         }
 
-        .section h2 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2em;
+        .contact-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-val {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            word-break: break-word;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-val a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-val a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Timeline (Education & Internship) */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 7px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -24px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--header-bg);
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 0 3px var(--bg-card);
+        }
+
+        .timeline-date {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-date .gpa-badge {
+            background: #10b981;
+            color: #ffffff;
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+
+        /* Skills Categories */
+        .skills-category-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .skill-group {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+
+        .skill-group-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 10px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .section-subtitle {
-            color: #888;
-            margin-bottom: 30px;
-            font-style: italic;
+        .skill-group-title i {
+            color: var(--accent);
+            font-size: 0.9rem;
         }
 
-        /* Skills Grid */
-        .skills-grid {
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            background: var(--badge-bg);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag.featured {
+            border-color: var(--badge-border);
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-weight: 600;
+        }
+
+        /* Internship Experience Card */
+        .experience-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            margin-bottom: 18px;
+            position: relative;
+            border-left: 4px solid var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .exp-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-company {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 2px;
+        }
+
+        .exp-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-border);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .exp-bullets {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px 16px;
+            margin-top: 14px;
+        }
+
+        .exp-bullets li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .exp-bullets li i {
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .project-banner {
+            height: 120px;
+            background: linear-gradient(135deg, #2d333b 0%, #1c2128 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 2.4rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-badge-top {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .project-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .project-role {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-desc-list {
+            list-style: none;
+            margin-bottom: 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .project-desc-list li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .project-desc-list li i {
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-card {
+            flex: 1;
+            justify-content: center;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
 
-        .skill-card {
-            background: rgba(35, 35, 35, 0.8);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
-            border-left-width: 6px;
-        }
-
-        .skill-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .skill-card ul {
-            list-style: none;
-        }
-
-        .skill-card li {
-            padding: 8px 0;
-            color: #b0b0b0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .skill-card li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-size: 1.5em;
-            line-height: 0.8;
-        }
-
-        /* Project Card */
-        .project-card {
-            background: rgba(35, 35, 35, 0.8);
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-            position: relative;
+        .cert-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
             overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        .project-card::before {
-            content: '';
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .cert-img-wrapper {
+            position: relative;
+            height: 190px;
+            background: #0d1117;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .cert-card:hover .cert-img {
+            transform: scale(1.05);
+        }
+
+        .cert-overlay {
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: #fff;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cert-card:hover .cert-overlay {
+            opacity: 1;
+        }
+
+        .cert-body {
+            padding: 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-date {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .cert-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .cert-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+        }
+
+        .cert-badge-pill {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
+            background-color: rgba(13, 17, 23, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
             opacity: 0;
             transition: opacity 0.3s ease;
-            pointer-events: none;
         }
 
-        .project-card:hover::before {
+        .modal.active {
+            display: flex;
             opacity: 1;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-            border-left-width: 8px;
-        }
-
-        .project-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-        }
-
-        .project-card p {
-            color: #b0b0b0;
-            margin-bottom: 15px;
-        }
-
-        .project-links {
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s;
-            font-weight: 500;
+        @keyframes modalScale {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .modal-header {
+            padding: 16px 22px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Info Card */
-        .info-card {
-            background: rgba(35, 35, 35, 0.8);
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
+        .modal-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
-        .info-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
-            border-left-width: 8px;
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
         }
 
-        .info-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.2em;
+        .modal-close:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
         }
 
-        .info-card p {
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-
-        .info-card .badge {
-            display: inline-block;
-            background: rgba(102, 126, 234, 0.15);
-            color: #667eea;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-top: 8px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        /* Contact Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .contact-card {
-            background: rgba(35, 35, 35, 0.8);
-            padding: 25px;
-            border-radius: 15px;
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
             text-align: center;
-            transition: all 0.3s;
-            border: 1px solid #333;
+            background: #000000;
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-            border-color: #667eea;
+        .modal-img {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
         }
 
-        .contact-card strong {
-            display: block;
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .contact-card a {
-            color: #b0b0b0;
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .contact-card a:hover {
-            color: #667eea;
+        .modal-footer {
+            padding: 14px 22px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            background: var(--bg-secondary);
         }
 
         /* Footer */
-        footer {
+        footer.site-footer {
+            background: var(--header-darker);
+            color: var(--header-subtext);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 30px 0;
             text-align: center;
-            padding: 30px 20px;
-            color: #888;
-            margin-top: 40px;
+            font-size: 0.9rem;
         }
 
-        /* Highlight Box */
-        .highlight-box {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 10px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+        .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
-        .highlight-box h4 {
-            color: #667eea;
-            margin-bottom: 10px;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin: 18px 0;
+            flex-wrap: wrap;
         }
 
-        .highlight-box ul {
-            margin-left: 20px;
-            color: #b0b0b0;
+        .footer-links a {
+            color: var(--header-subtext);
+            text-decoration: none;
+            transition: var(--transition);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 15px;
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
             }
-
-            nav ul {
+            .resume-hero-grid {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            .hero-pill-list, .hero-actions {
                 justify-content: center;
             }
+        }
 
-            .hero {
-                padding: 40px 20px;
-                text-align: center;
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-lg);
             }
-
-            .hero h2 {
-                font-size: 1.8em;
+            .nav-menu.mobile-open {
+                display: flex;
             }
-
-            .section {
-                padding: 25px 20px;
+            .mobile-menu-toggle {
+                display: block;
             }
-
-            .section h2 {
-                font-size: 1.5em;
+            .resume-hero-details h1 {
+                font-size: 1.9rem;
+            }
+            .resume-hero-details h2 {
+                font-size: 1.05rem;
+                letter-spacing: 2px;
+            }
+            .top-bar .container {
+                justify-content: center;
+            }
+            .top-info-items {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+
+    <!-- Top Action Bar -->
+    <div class="top-bar">
         <div class="container">
-            <div class="logo">
-                <div class="logo-img">IT</div>
-                <div class="logo-text">
-                    <h1>ทวีชัย นามฮาด</h1>
-                    <p>นักศึกษาสาขาเทคโนโลยีสารสนเทศ - UDRU</p>
-                </div>
+            <div class="top-info-items">
+                <span class="top-info-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span data-i18n="top_degree">Udon Thani Rajabhat University (IT)</span>
+                </span>
+                <span class="top-info-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>GPA: 3.50</span>
+                </span>
+                <span class="top-info-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span data-i18n="top_status">Frontend & QA Intern</span>
+                </span>
             </div>
-            <ul>
-                <li><a href="#profile">แนะนำตัว</a></li>
-                <li><a href="#skills">ทักษะ</a></li>
-                <li><a href="#projects">ผลงาน</a></li>
-                <li><a href="#education">การศึกษา</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">ติดต่อ</a></li>
-                <li><span style="color: #b0b0b0; padding: 5px 10px; cursor: default;">องค์ประกอบเสริม</span></li>
-            </ul>
+            
+            <div class="top-controls">
+                <button class="lang-btn" id="langToggle" title="Switch Language">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="langLabel">TH / EN</span>
+                </button>
+                <button class="theme-btn" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                    <span id="themeLabel">Mode</span>
+                </button>
+            </div>
         </div>
-    </nav>
-
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2>สวัสดีครับ</h2>
-                <p>ผมชื่อ นายทวีชัย นามฮาด (บูม)
-    ปัจจุบันกำลังศึกษาอยู่ที่ มหาวิทยาลัยราชภัฏอุดรธานีสามพร้าว
-    มีความสนใจและมุ่งมั่นที่จะเติบโตในสายงานด้าน เทคโนโลยีสารสนเทศ (IT) โดยเฉพาะด้าน Web Development
-
-    ผมมีความตั้งใจและมุ่งมั่นในงานที่ทำ ชอบเรียนรู้สิ่งใหม่และนำมาปรับใช้ โดยเฉพาะทักษะด้านเทคโนโลยีและการเขียนโปรแกรม
-
-    ในเวลาว่าง ผมชอบศึกษาหาความรู้เพิ่มเติมผ่านสื่อออนไลน์ ฟังเพลง และเล่นเกมเพื่อฝึกการคิดวิเคราะห์และการแก้ปัญหา
-    นอกจากนี้ยังสามารถปรับตัวเข้ากับเทคโนโลยีสมัยใหม่ที่เปลี่ยนแปลงได้อย่างรวดเร็ว</p>
-                <div class="hero-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">HTML/CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">SQL</span>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="me.jpg" alt="รูปโปรไฟล์" class="profile-pic">
-            </div>
-        </section>
-
-        <!-- 1. Profile -->
-        <section id="profile" class="section">
-            <h2>1. ส่วนแนะนำตัว (Introduction / Profile)</h2>
-            <p class="section-subtitle"></p>
-            
-            <div class="skills-grid">
-                <div class="info-card">
-                    <h3>ชื่อ-นามสกุล</h3>
-                    <p>ทวีชัย นามฮาด</p>
-                    <p>Thaweechai Namhad</p>
-                </div>
-                <div class="info-card">
-                    <h3>สถาบันการศึกษา</h3>
-                    <p>คณะวิทยาศาสตร์</p>
-                    <p>มหาวิทยาลัยราชภัฏอุดรธานี</p>
-                    <p>สาขาเทคโนโลยีสารสนเทศ</p>
-                </div>
-                <div class="info-card">
-                    <h3>ปีการศึกษา</h3>
-                    <p>นักศึกษาปี 3</p>
-                </div>
-                <div class="info-card">
-                    <h3>ความสนใจเฉพาะทาง</h3>
-                    <p>Web Developer, Web Engineer, Full-stack Developer, Data&It Support</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Skills -->
-        <section id="skills" class="section">
-            <h2>2. ทักษะ (Skills)</h2>
-            <!-- <p class="section-subtitle">จุดประสงค์: ให้ผู้อ่านรายชื่อว่าคุณมีความสามารถอะไรได้บ้าง</p> -->
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>Github</li>
-                        <li>VSCode</li>
-                        <li>Figma</li>
-                        <li>Word</li>
-                        <li>Photoshop</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Projects -->
-        <section id="projects" class="section">
-            <h2>3. ผลงานที่ผ่านมา (Projects / Portfolio)</h2>
-            <p class="section-subtitle">ผลงานและโปรเจคที่เคยทำ</p>
-            
-            
-
-            <div class="project-card">
-                <h3>🥗 เว็บไซต์ส้มตำสุดอร่อย</h3>
-                <p><strong>ภูมิปัญญาท้องถิ่นภาคอีสาน</strong></p>
-                <p>เว็บไซต์แนะนำอาหารพื้นบ้านอีสาน โดยเฉพาะส้มตำ พัฒนาด้วย HTML, CSS และ JavaScript</p>
-                <p style="margin-top: 10px;">โปรเจคนี้ได้รับรางวัลรองชนะเลิศอันดับ 1 จากการแข่งขันพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน</p>
-                <div class="project-links">
-                    <a href="https://github.com/Thaweechai456" class="btn">GitHub Repository</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>🎮 ออกแบบร้านขายเกมมิ่งเกียร์</h3>
-                <p><strong>UI/UX Design Project</strong></p>
-                <p>ออกแบบหน้าเว็บไซต์ร้านค้าออนไลน์สำหรับขายอุปกรณ์เกมมิ่งด้วย Figma</p>
-                <p style="margin-top: 10px;">โปรเจคนี้เน้นการออกแบบ User Interface และ User Experience ที่ทันสมัย ใช้งานง่าย และเหมาะสำหรับร้านค้าออนไลน์</p>
-                <div class="project-links">
-                    <a href="https://www.figma.com/design/BTvbQnMqEjeDu0ShoOPvX8/Untitled?node-id=0-1&t=Sd6fTbIprw09PaIB-1" target="_blank" class="btn">ดูใน Figma</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Education -->
-        <section id="education" class="section">
-            <h2>4. การศึกษา (Education)</h2>
-            
-            <div class="info-card">
-                <p>ระดับประถม : โรงเรียนบ้านหมากแข้ง</p>
-                <p>ระดับมัธยมต้น : โรงเรียนบ้านหมากแข้ง</p>
-                <p>ระดับปวช. : วิทยาลัยเทคนิคอุดรธานี</p>
-                <p>กำลังศึกษาอยู่ : มหาวิทยาลัยราชภัฏอุดรธานี</p>
-               
-            </div>
-        </section>
-
-        <!-- 5. Certificates -->
-        <section id="certificates" class="section">
-            <h2>5. Certificates & Awards</h2>
-            <p class="section-subtitle">ใบรับรองและรางวัลที่ได้รับ</p>
-            
-            <div class="info-card">
-                <h3>🥈 รางวัลรองชนะเลิศอันดับ 1 - การแข่งขันพัฒนาเว็บไซต์</h3>
-                <p><strong>ผลการแข่งขันการพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน</strong></p>
-                <p style="margin-top: 10px;">พัฒนาเว็บไซต์ "ส้มตำสุดอร่อย" (ส้มตำ)</p>
-                <p>นักศึกษาสาขาเทคโนโลยีสารสนเทศ ชั้นปีที่ 1</p>
-                <p>วันศุกร์ที่ 6 ตุลาคม 2566</p>
-                <div style="text-align: center; margin-top: 20px;">
-                    <img src="Capture.JPG" alt="Certificate" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);">
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h3>📜 Google Gemini AI Certificate</h3>
-                <p>ใบรับรองการเรียนรู้และใช้งาน Google Gemini AI</p>
-                <p style="margin-top: 10px;">เทคโนโลยี AI และการประยุกต์ใช้งาน</p>
-                <div style="text-align: center; margin-top: 20px;">
-                    <img src="ss3.png" alt="Certificate" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);">
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Contact -->
-        <section id="contact" class="section">
-            <h2>6. ติดต่อ (Contact)</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <strong>Email</strong>
-                    <p><a href="66040233102@udru.ac.th">66040233102@udru.ac.th</a></p>
-                    <p style="color: #666; font-size: 0.9em; margin-top: 5px;">(Gmail มหาวิทยาลัย)</p>
-                </div>
-                <div class="contact-card">
-                    <strong>GitHub</strong>
-                    <p><a href="https://github.com/Thaweechai456" target="_blank">github.com/Thaweechai456</a></p>
-                </div>
-                <div class="contact-card">
-                    <strong>Line</strong>
-                    <p>Line : boom--3</p>
-                </div>
-                <div class="contact-card">
-                    <strong>Facebook</strong>
-                    <p><a href="https://www.facebook.com/boom.thaweechai/" target="_blank">FB : Boom Thaweechai</a></p>
-                </div>
-            </div>
-            
-            <div class="highlight-box" style="text-align: center;">
-                <p><strong>ที่อยู่จังหวัด:</strong> (ต.บ้านจั่น อ.เมือง จ.อุดรธานี 41000)</p>
-            </div>
-        </section>
-
-        <!-- 7. Extra -->
-        <section id="extra" class="section">
-            <h2>7. องค์ประกอบเสริม</h2>
-            
-            <div class="info-card">
-                <h3>เป้าหมายในอนาคต หรือ Career Interest</h3>
-                <p>ต้องการเป็น Web Developer / Web Engineer / Full-stack Developer / Data&It Support</p>
-                <p style="margin-top: 10px;">มีความสนใจในด้าน การพัฒนาเว็บไซต์ (Web Development) โดยเฉพาะ ทั้งในส่วนของ Frontend และ Backend
-มุ่งเน้นการสร้างเว็บแอปพลิเคชันที่ใช้งานง่าย สวยงาม และมีประสิทธิภาพ</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 ทวีชัย นามฮาด | Portfolio Website</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Made with ❤️ using HTML & CSS</p>
-        </footer>
     </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#about" class="brand-logo">
+                    <img src="boomimage2.png" alt="Thaweechai Namhad" class="brand-avatar">
+                    <div class="brand-text">
+                        <h1 data-i18n="brand_name">THAWEECHAI NAMHAD</h1>
+                        <span data-i18n="brand_subtitle">INFORMATION TECHNOLOGY</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#about" class="nav-link active" data-i18n="nav_about">เกี่ยวกับฉัน</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav_skills">ทักษะ</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav_exp">ประสบการณ์</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav_projects">ผลงาน</a></li>
+                    <li><a href="#certificates" class="nav-link" data-i18n="nav_certs">ใบรับรอง & รางวัล</a></li>
+                    <li><a href="#education" class="nav-link" data-i18n="nav_edu">การศึกษา</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">ติดต่อ</a></li>
+                    <li>
+                        <button class="btn nav-resume-btn" onclick="openResumeModal()">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span data-i18n="nav_view_resume">ดู Resume</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- RESUME HERO BANNER (Styled precisely after Resume dark slate header) -->
+    <section class="resume-hero-banner" id="hero">
+        <div class="container">
+            <div class="resume-hero-grid">
+                <div class="resume-avatar-container">
+                    <img src="boomimage2.png" alt="Thaweechai Namhad" class="resume-avatar">
+                    <div class="status-badge" title="พร้อมร่วมงานและฝึกฝน">
+                        <div class="status-dot"></div>
+                        <span data-i18n="hero_status">พร้อมทำงาน / ฝึกงาน</span>
+                    </div>
+                </div>
+
+                <div class="resume-hero-details">
+                    <h1 data-i18n="hero_name">THAWEECHAI NAMHAD</h1>
+                    <h2 data-i18n="hero_title">INFORMATION TECHNOLOGY</h2>
+                    
+                    <div class="hero-pill-list">
+                        <span class="hero-pill"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="hero_year">นักศึกษาชั้นปีที่ 4 (วท.บ. เทคโนโลยีสารสนเทศ)</span></span>
+                        <span class="hero-pill"><i class="fa-solid fa-star"></i> GPA: 3.50</span>
+                        <span class="hero-pill"><i class="fa-solid fa-code"></i> Frontend & QA Testing</span>
+                        <span class="hero-pill"><i class="fa-solid fa-location-dot"></i> Udon Thani, Thailand</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="openResumeModal()">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span data-i18n="btn_resume">ดู & ดาวน์โหลด Resume</span>
+                        </button>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-i18n="btn_contact">ติดต่อฉัน</span>
+                        </a>
+                        <a href="https://github.com/Thaweechai456" target="_blank" class="btn btn-secondary">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN TWO-COLUMN CONTENT LAYOUT -->
+    <main class="main-layout">
+        <div class="container">
+            <div class="content-grid">
+                
+                <!-- LEFT COLUMN: Contact, Education, Quick Info -->
+                <aside class="sidebar-col">
+                    
+                    <!-- Contact Card -->
+                    <div class="section-card" id="contact">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-address-book"></i>
+                                <span data-i18n="sec_contact">ติดต่อ (Contact)</span>
+                            </span>
+                        </h2>
+                        
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label" data-i18n="lbl_phone">เบอร์โทรศัพท์</div>
+                                    <div class="contact-val"><a href="tel:0610130511">061-013-0511</a></div>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label">Email</div>
+                                    <div class="contact-val"><a href="mailto:thaweechai.dev@gmail.com">thaweechai.dev@gmail.com</a></div>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label">Facebook</div>
+                                    <div class="contact-val"><a href="https://www.facebook.com/boom.thaweechai/" target="_blank">FB : Boom Thaweechai</a></div>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-brands fa-line"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label">Line ID</div>
+                                    <div class="contact-val">boom--3</div>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label">GitHub Portfolio</div>
+                                    <div class="contact-val"><a href="https://thaweechai456.github.io" target="_blank">thaweechai456.github.io</a></div>
+                                </div>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-map-pin"></i></div>
+                                <div class="contact-info">
+                                    <div class="contact-label" data-i18n="lbl_location">ที่อยู่</div>
+                                    <div class="contact-val" data-i18n="val_location">ต.บ้านจั่น อ.เมือง จ.อุดรธานี 41000</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="section-card" id="education">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                <span data-i18n="sec_edu">การศึกษา (Education)</span>
+                            </span>
+                        </h2>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">
+                                    <span data-i18n="edu_1_date">2023 - ปัจจุบัน</span>
+                                    <span class="gpa-badge">GPA: 3.50</span>
+                                </div>
+                                <div class="timeline-title" data-i18n="edu_1_deg">วิทยาศาสตรบัณฑิต (วท.บ.)</div>
+                                <div class="timeline-subtitle" data-i18n="edu_1_school">มหาวิทยาลัยราชภัฏอุดรธานี</div>
+                                <div class="timeline-desc" data-i18n="edu_1_major">สาขาเทคโนโลยีสารสนเทศ (Information Technology)</div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date" data-i18n="edu_2_date">2020 - 2023</div>
+                                <div class="timeline-title" data-i18n="edu_2_deg">ประกาศนียบัตรวิชาชีพ (ปวช.)</div>
+                                <div class="timeline-subtitle" data-i18n="edu_2_school">วิทยาลัยเทคนิคอุดรธานี</div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date" data-i18n="edu_3_date">2017 - 2020</div>
+                                <div class="timeline-title" data-i18n="edu_3_deg">มัธยมศึกษาตอนต้น</div>
+                                <div class="timeline-subtitle" data-i18n="edu_3_school">โรงเรียนบ้านหมากแข้ง</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Career Goal / Extra Card -->
+                    <div class="section-card">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-bullseye"></i>
+                                <span data-i18n="sec_career">เป้าหมายในอนาคต</span>
+                            </span>
+                        </h2>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;" data-i18n="career_text">
+                            มุ่งมั่นที่จะเติบโตในสายงาน <strong>Web Development</strong> (Frontend / Full-stack) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย ปลอดภัย มีประสิทธิภาพ และมีประสบการณ์ผู้ใช้งานที่ดีเยี่ยม
+                        </p>
+                    </div>
+
+                </aside>
+
+
+                <!-- RIGHT COLUMN: About, Skills, Internship, Projects, Certificates -->
+                <div class="main-col">
+
+                    <!-- About Me -->
+                    <section class="section-card" id="about">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-user"></i>
+                                <span data-i18n="sec_about">เกี่ยวกับฉัน (About Me)</span>
+                            </span>
+                        </h2>
+                        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;" data-i18n="about_content">
+                            นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี มีพื้นฐานด้านการพัฒนา Frontend และการทดสอบซอฟต์แวร์ (QA Testing) มีความคุ้นเคยกับ React, TypeScript, Node.js, REST APIs และ Firebase จากการทำโครงงานในมหาวิทยาลัยและประสบการณ์ฝึกงาน สนใจเรียนรู้และพัฒนาทักษะด้านการพัฒนาเว็บไซต์ในเชิงปฏิบัติ พร้อมนำความรู้ไปสนับสนุนการทำงานร่วมกับทีมพัฒนาซอฟต์แวร์
+                        </p>
+                        
+                        <div class="highlight-quote" style="background: var(--bg-secondary); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; color: var(--text-muted);">
+                            <i class="fa-solid fa-quote-left" style="color: var(--accent); margin-right: 6px;"></i>
+                            <span data-i18n="about_quote">"เรียนรู้สิ่งใหม่ พัฒนาทักษะเชิงลึก พร้อมสร้างคุณค่าและทำงานร่วมกับทีมอย่างมืออาชีพ"</span>
+                        </div>
+                    </section>
+
+                    <!-- Technical Skills -->
+                    <section class="section-card" id="skills">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <span data-i18n="sec_skills">ทักษะทางเทคนิค (Technical Skills)</span>
+                            </span>
+                        </h2>
+
+                        <div class="skills-category-group">
+                            <!-- Frontend -->
+                            <div class="skill-group">
+                                <div class="skill-group-title">
+                                    <i class="fa-brands fa-react"></i>
+                                    <span>Frontend Development</span>
+                                </div>
+                                <div class="tags-container">
+                                    <span class="skill-tag featured"><i class="fa-brands fa-react"></i> React</span>
+                                    <span class="skill-tag featured"><i class="fa-solid fa-code"></i> TypeScript</span>
+                                    <span class="skill-tag featured"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                    <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</span>
+                                </div>
+                            </div>
+
+                            <!-- Backend & Database -->
+                            <div class="skill-group">
+                                <div class="skill-group-title">
+                                    <i class="fa-solid fa-server"></i>
+                                    <span>Backend & API</span>
+                                </div>
+                                <div class="tags-container">
+                                    <span class="skill-tag featured"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                                    <span class="skill-tag featured"><i class="fa-solid fa-bolt"></i> Express.js</span>
+                                    <span class="skill-tag featured"><i class="fa-solid fa-fire"></i> Firebase</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-network-wired"></i> REST API</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                                </div>
+                            </div>
+
+                            <!-- Testing & QA -->
+                            <div class="skill-group">
+                                <div class="skill-group-title">
+                                    <i class="fa-solid fa-vial-circle-check"></i>
+                                    <span>Testing & QA</span>
+                                </div>
+                                <div class="tags-container">
+                                    <span class="skill-tag featured"><i class="fa-solid fa-bug"></i> QA Testing</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-clipboard-check"></i> Manual Testing</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-wrench"></i> Bug Fixing</span>
+                                </div>
+                            </div>
+
+                            <!-- Tools & Workflow -->
+                            <div class="skill-group">
+                                <div class="skill-group-title">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    <span>Tools & Environment</span>
+                                </div>
+                                <div class="tags-container">
+                                    <span class="skill-tag featured"><i class="fa-brands fa-git-alt"></i> Git</span>
+                                    <span class="skill-tag featured"><i class="fa-brands fa-github"></i> GitHub</span>
+                                    <span class="skill-tag featured"><i class="fa-brands fa-figma"></i> Figma</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-code"></i> VS Code</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-terminal"></i> Codex</span>
+                                    <span class="skill-tag"><i class="fa-solid fa-robot"></i> Antigravity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Internship Experience -->
+                    <section class="section-card" id="experience">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span data-i18n="sec_exp">ประสบการณ์การฝึกงาน (Internship Experience)</span>
+                            </span>
+                        </h2>
+
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title" data-i18n="exp_pos">นักศึกษาฝึกงานตำแหน่ง Frontend Developer & QA</div>
+                                    <div class="exp-company">Next Triple Nine Co., Ltd</div>
+                                </div>
+                                <span class="exp-badge" data-i18n="exp_badge">Internship</span>
+                            </div>
+                            
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;" data-i18n="exp_summary">
+                                ปฏิบัติงานจริงร่วมกับทีมพัฒนาซอฟต์แวร์ในการออกแบบ พัฒนาระบบเว็บ และทำการตรวจสอบคุณภาพซอฟต์แวร์:
+                            </p>
+
+                            <ul class="exp-bullets">
+                                <li><i class="fa-solid fa-circle-check"></i> <span>React + TypeScript</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span>Node.js + Express + Firebase</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span>REST API / Webhook Integration</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span>OAuth / Authentication</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span>QA Testing / Bug Fixing</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span>Technical Documentation / Video Tutorials</span></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Projects -->
+                    <section class="section-card" id="projects">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                <span data-i18n="sec_projects">ผลงานที่ผ่านมา (Projects)</span>
+                            </span>
+                        </h2>
+
+                        <div class="projects-grid">
+                            <!-- Project 1: MiceBMStore -->
+                            <div class="project-card">
+                                <div class="project-banner" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%);">
+                                    <i class="fa-solid fa-computer-mouse"></i>
+                                    <span class="project-badge-top">UI/UX Prototype</span>
+                                </div>
+                                <div class="project-body">
+                                    <div class="project-name">MiceBMStore</div>
+                                    <div class="project-role" data-i18n="proj_1_role">แอปพลิเคชันมือถือร้านขายเมาส์ – การออกแบบ UI/UX</div>
+                                    
+                                    <ul class="project-desc-list">
+                                        <li>
+                                            <i class="fa-solid fa-circle-dot"></i>
+                                            <span data-i18n="proj_1_d1">ออกแบบและสร้างแบบจำลองหน้าจอแอปพลิเคชันอีคอมเมิร์ซสำหรับจำหน่ายเมาส์และอุปกรณ์คอมพิวเตอร์ด้วย Figma</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-dot"></i>
+                                            <span data-i18n="proj_1_d2">ออกแบบขั้นตอนการทำงาน (Workflow) และ Wireframe ให้ใช้งานง่าย พร้อมฟังก์ชันจัดการสินค้า (เพิ่ม/ลบ สินค้า)</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Figma</span>
+                                        <span class="project-tag">UI/UX Design</span>
+                                        <span class="project-tag">Wireframing</span>
+                                        <span class="project-tag">E-Commerce Flow</span>
+                                    </div>
+
+                                    <div class="project-actions">
+                                        <a href="https://www.figma.com/design/BTvbQnMqEjeDu0ShoOPvX8/Untitled?node-id=0-1&t=Sd6fTbIprw09PaIB-1" target="_blank" class="btn btn-secondary btn-card">
+                                            <i class="fa-brands fa-figma"></i>
+                                            <span data-i18n="btn_figma">เปิดดูใน Figma</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2: Somtam Sood Aroi -->
+                            <div class="project-card">
+                                <div class="project-banner" style="background: linear-gradient(135deg, #1e242c 0%, #2f3542 100%);">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    <span class="project-badge-top" style="background: #10b981;">🏆 1st Runner-Up</span>
+                                </div>
+                                <div class="project-body">
+                                    <div class="project-name" data-i18n="proj_2_name">เว็บไซต์ส้มตำสุดอร่อย (Somtam Sood Aroi)</div>
+                                    <div class="project-role" data-i18n="proj_2_role">Web Development & Local Heritage</div>
+                                    
+                                    <ul class="project-desc-list">
+                                        <li>
+                                            <i class="fa-solid fa-circle-dot"></i>
+                                            <span data-i18n="proj_2_d1">พัฒนาเว็บไซต์นำเสนอวัฒนธรรมอาหารอีสานและภูมิปัญญาท้องถิ่นด้วย HTML, CSS และ JavaScript</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-circle-dot"></i>
+                                            <span data-i18n="proj_2_d2">ออกแบบโครงสร้างหน้าเว็บและระบบคลังภาพเมนูอาหารให้ออกมาสวยงาม สบายตา และใช้งานง่าย</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">HTML5</span>
+                                        <span class="project-tag">CSS3</span>
+                                        <span class="project-tag">JavaScript</span>
+                                        <span class="project-tag">Award Winner</span>
+                                    </div>
+
+                                    <div class="project-actions">
+                                        <a href="https://github.com/Thaweechai456" target="_blank" class="btn btn-secondary btn-card">
+                                            <i class="fa-brands fa-github"></i>
+                                            <span>GitHub Repo</span>
+                                        </a>
+                                        <button class="btn btn-outline btn-card" onclick="openCertModal('Capture.JPG', 'ใบประกาศรางวัลรองชนะเลิศอันดับ 1 - เว็บไซต์ส้มตำสุดอร่อย')">
+                                            <i class="fa-solid fa-certificate"></i>
+                                            <span data-i18n="btn_cert">ดูใบรางวัล</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Activities & Certificates -->
+                    <section class="section-card" id="certificates">
+                        <h2 class="section-title">
+                            <span class="section-title-left">
+                                <i class="fa-solid fa-award"></i>
+                                <span data-i18n="sec_certs">กิจกรรมและใบรับรอง (Activities & Certificates)</span>
+                            </span>
+                        </h2>
+
+                        <div class="certificates-grid">
+                            
+                            <!-- Cert 1: Cisco Cybersecurity (Newly Added from User Upload) -->
+                            <div class="cert-card" onclick="openCertModal('cisco-cybersecurity-cert.png', 'Cisco Introduction to Cybersecurity - Certificate of Course Completion')">
+                                <div class="cert-img-wrapper">
+                                    <img src="cisco-cybersecurity-cert.png" alt="Cisco Introduction to Cybersecurity Certificate" class="cert-img">
+                                    <div class="cert-overlay">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                        <span data-i18n="cert_zoom">คลิกเพื่อดูรูปขยาย</span>
+                                    </div>
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-date">Aug 21, 2026</div>
+                                    <div class="cert-title">Cisco Introduction to Cybersecurity</div>
+                                    <div class="cert-issuer">Cisco Networking Academy</div>
+                                    <div class="cert-footer">
+                                        <span class="cert-badge-pill">Cybersecurity</span>
+                                        <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cert 2: Isan Local Wisdom Web Dev Competition -->
+                            <div class="cert-card" onclick="openCertModal('Capture.JPG', 'รางวัลรองชนะเลิศอันดับ 1 - การแข่งขันพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน')">
+                                <div class="cert-img-wrapper">
+                                    <img src="Capture.JPG" alt="รางวัลรองชนะเลิศอันดับ 1 การแข่งขันพัฒนาเว็บไซต์" class="cert-img">
+                                    <div class="cert-overlay">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                        <span data-i18n="cert_zoom">คลิกเพื่อดูรูปขยาย</span>
+                                    </div>
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-date">Oct 2023</div>
+                                    <div class="cert-title" data-i18n="cert_isan_title">รางวัลรองชนะเลิศอันดับ 1 - การแข่งขันพัฒนาเว็บไซต์</div>
+                                    <div class="cert-issuer" data-i18n="cert_isan_issuer">การแข่งขันพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน (UDRU)</div>
+                                    <div class="cert-footer">
+                                        <span class="cert-badge-pill">1st Runner-Up</span>
+                                        <span><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> Award</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cert 3: Google Gemini AI -->
+                            <div class="cert-card" onclick="openCertModal('ss3.png', 'Google Gemini AI Certificate - AI Prompting & Applications')">
+                                <div class="cert-img-wrapper">
+                                    <img src="ss3.png" alt="Google Gemini AI Certificate" class="cert-img">
+                                    <div class="cert-overlay">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                        <span data-i18n="cert_zoom">คลิกเพื่อดูรูปขยาย</span>
+                                    </div>
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-date">Certified</div>
+                                    <div class="cert-title">Google Gemini AI Certificate</div>
+                                    <div class="cert-issuer">AI & Prompt Engineering Application</div>
+                                    <div class="cert-footer">
+                                        <span class="cert-badge-pill">AI & Tools</span>
+                                        <span><i class="fa-solid fa-brain" style="color: #6366f1;"></i> Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cert 4: Internship Certificate Info -->
+                            <div class="cert-card" style="border-left: 4px solid var(--accent);">
+                                <div class="cert-img-wrapper" style="background: linear-gradient(135deg, #1c2128 0%, #2d333b 100%);">
+                                    <i class="fa-solid fa-file-signature" style="font-size: 3rem; color: var(--header-subtext);"></i>
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-date">Internship</div>
+                                    <div class="cert-title">Certificate of Internship</div>
+                                    <div class="cert-issuer">Frontend Developer & QA – Next Triple Nine Co., Ltd.</div>
+                                    <div class="cert-footer">
+                                        <span class="cert-badge-pill">Experience</span>
+                                        <span><i class="fa-solid fa-briefcase" style="color: var(--accent);"></i> Industry</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">THAWEECHAI NAMHAD</div>
+            <p data-i18n="footer_sub">Information Technology | Udon Thani Rajabhat University</p>
+            
+            <ul class="footer-links">
+                <li><a href="#about" data-i18n="nav_about">เกี่ยวกับฉัน</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">ทักษะ</a></li>
+                <li><a href="#experience" data-i18n="nav_exp">ประสบการณ์</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">ผลงาน</a></li>
+                <li><a href="#certificates" data-i18n="nav_certs">ใบรับรอง</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">ติดต่อ</a></li>
+            </ul>
+
+            <div class="footer-copy">
+                <p>&copy; <span id="currentYear">2026</span> Thaweechai Namhad. Designed & Refined with modern web standards.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX / CERTIFICATE MODAL -->
+    <div class="modal" id="imageModal" onclick="handleModalBackdrop(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">ใบประกาศนียบัตร</div>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Enlarged Certificate" class="modal-img" id="modalImage">
+            </div>
+            <div class="modal-footer">
+                <a href="" id="modalDownloadBtn" download class="btn btn-secondary" style="font-size: 0.85rem;">
+                    <i class="fa-solid fa-download"></i>
+                    <span data-i18n="modal_download">ดาวน์โหลดไฟล์</span>
+                </a>
+                <button class="btn btn-outline" onclick="closeModal()" style="font-size: 0.85rem;" data-i18n="modal_close">ปิด</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUME MODAL (EN & TH) -->
+    <div class="modal" id="resumeModal" onclick="handleResumeBackdrop(event)">
+        <div class="modal-content" style="max-width: 950px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-file-lines" style="color: var(--accent); margin-right: 6px;"></i>
+                    <span data-i18n="resume_modal_title">Official Resume - Thaweechai Namhad</span>
+                </div>
+                <button class="modal-close" onclick="closeResumeModal()" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="background: #111; padding: 24px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                <div style="display: flex; gap: 10px; margin-bottom: 8px;">
+                    <button class="btn btn-secondary" onclick="switchResumeView('en')" id="btnResEn">English Version</button>
+                    <button class="btn btn-outline" onclick="switchResumeView('th')" id="btnResTh">ภาษาไทย (Thai)</button>
+                </div>
+                <img src="resume-en.png" alt="Thaweechai Namhad Resume" id="resumePreviewImg" style="max-width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+            <div class="modal-footer">
+                <a href="Thaweechai_Namhad_Resume.pdf" download="Thaweechai_Namhad_Resume.pdf" class="btn btn-primary" style="font-size: 0.88rem;">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span data-i18n="download_resume_pdf">ดาวน์โหลด Resume PDF</span>
+                </a>
+                <button class="btn btn-outline" onclick="closeResumeModal()" style="font-size: 0.85rem;" data-i18n="modal_close">ปิด</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Theme Toggle (Dark / Light)
+        const htmlEl = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeLabel = document.getElementById('themeLabel');
+
+        function setTheme(theme) {
+            htmlEl.setAttribute('data-theme', theme);
+            localStorage.setItem('portfolio_theme', theme);
+            if (theme === 'light') {
+                themeIcon.className = 'fa-solid fa-moon';
+                themeLabel.textContent = 'Dark';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun';
+                themeLabel.textContent = 'Light';
+            }
+        }
+
+        // Initialize Theme from localStorage or default light
+        const savedTheme = localStorage.getItem('portfolio_theme') || 'light';
+        setTheme(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const current = htmlEl.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('mobile-open');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('mobile-open')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('mobile-open');
+                mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+
+        // Modal Functions
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+
+        function openCertModal(src, title) {
+            modalImage.src = src;
+            modalTitle.textContent = title;
+            modalDownloadBtn.href = src;
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalBackdrop(e) {
+            if (e.target === imageModal) {
+                closeModal();
+            }
+        }
+
+        // Resume Modal
+        const resumeModal = document.getElementById('resumeModal');
+        const resumePreviewImg = document.getElementById('resumePreviewImg');
+        const btnResEn = document.getElementById('btnResEn');
+        const btnResTh = document.getElementById('btnResTh');
+
+        function openResumeModal() {
+            resumeModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResumeModal() {
+            resumeModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleResumeBackdrop(e) {
+            if (e.target === resumeModal) {
+                closeResumeModal();
+            }
+        }
+
+        function switchResumeView(lang) {
+            if (lang === 'en') {
+                resumePreviewImg.src = 'resume-en.png';
+                btnResEn.className = 'btn btn-secondary';
+                btnResTh.className = 'btn btn-outline';
+            } else {
+                resumePreviewImg.src = 'resume-th.png';
+                btnResTh.className = 'btn btn-secondary';
+                btnResEn.className = 'btn btn-outline';
+            }
+        }
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeResumeModal();
+            }
+        });
+
+        // ================= MULTI-LANGUAGE TRANSLATION DICTIONARY =================
+        const translations = {
+            th: {
+                top_degree: "มหาวิทยาลัยราชภัฏอุดรธานี (สาขาเทคโนโลยีสารสนเทศ)",
+                top_status: "นักศึกษาฝึกงาน Frontend & QA",
+                brand_name: "THAWEECHAI NAMHAD",
+                brand_subtitle: "INFORMATION TECHNOLOGY",
+                nav_about: "เกี่ยวกับฉัน",
+                nav_skills: "ทักษะ",
+                nav_exp: "ประสบการณ์",
+                nav_projects: "ผลงาน",
+                nav_certs: "ใบรับรอง & รางวัล",
+                nav_edu: "การศึกษา",
+                nav_contact: "ติดต่อ",
+                nav_view_resume: "ดู Resume",
+                hero_status: "พร้อมทำงาน / ฝึกงาน",
+                hero_name: "THAWEECHAI NAMHAD",
+                hero_title: "INFORMATION TECHNOLOGY",
+                hero_year: "นักศึกษาชั้นปีที่ 4 (วท.บ. เทคโนโลยีสารสนเทศ)",
+                btn_resume: "ดู & ดาวน์โหลด Resume",
+                btn_contact: "ติดต่อฉัน",
+                sec_contact: "ติดต่อ (Contact)",
+                lbl_phone: "เบอร์โทรศัพท์",
+                lbl_location: "ที่อยู่",
+                val_location: "ต.บ้านจั่น อ.เมือง จ.อุดรธานี 41000",
+                sec_edu: "การศึกษา (Education)",
+                edu_1_date: "2023 - ปัจจุบัน",
+                edu_1_deg: "วิทยาศาสตรบัณฑิต (วท.บ.)",
+                edu_1_school: "มหาวิทยาลัยราชภัฏอุดรธานี",
+                edu_1_major: "สาขาเทคโนโลยีสารสนเทศ (Information Technology)",
+                edu_2_date: "2020 - 2023",
+                edu_2_deg: "ประกาศนียบัตรวิชาชีพ (ปวช.)",
+                edu_2_school: "วิทยาลัยเทคนิคอุดรธานี",
+                edu_3_date: "2017 - 2020",
+                edu_3_deg: "มัธยมศึกษาตอนต้น",
+                edu_3_school: "โรงเรียนบ้านหมากแข้ง",
+                sec_career: "เป้าหมายในอนาคต",
+                career_text: "มุ่งมั่นที่จะเติบโตในสายงาน <strong>Web Development</strong> (Frontend / Full-stack) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย ปลอดภัย มีประสิทธิภาพ และมีประสบการณ์ผู้ใช้งานที่ดีเยี่ยม",
+                sec_about: "เกี่ยวกับฉัน (About Me)",
+                about_content: "นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี มีพื้นฐานด้านการพัฒนา Frontend และการทดสอบซอฟต์แวร์ (QA Testing) มีความคุ้นเคยกับ React, TypeScript, Node.js, REST APIs และ Firebase จากการทำโครงงานในมหาวิทยาลัยและประสบการณ์ฝึกงาน สนใจเรียนรู้และพัฒนาทักษะด้านการพัฒนาเว็บไซต์ในเชิงปฏิบัติ พร้อมนำความรู้ไปสนับสนุนการทำงานร่วมกับทีมพัฒนาซอฟต์แวร์",
+                about_quote: '"เรียนรู้สิ่งใหม่ พัฒนาทักษะเชิงลึก พร้อมสร้างคุณค่าและทำงานร่วมกับทีมอย่างมืออาชีพ"',
+                sec_skills: "ทักษะทางเทคนิค (Technical Skills)",
+                sec_exp: "ประสบการณ์การฝึกงาน (Internship Experience)",
+                exp_pos: "นักศึกษาฝึกงานตำแหน่ง Frontend Developer & QA",
+                exp_badge: "ฝึกงาน",
+                exp_summary: "ปฏิบัติงานจริงร่วมกับทีมพัฒนาซอฟต์แวร์ในการออกแบบ พัฒนาระบบเว็บ และทำการตรวจสอบคุณภาพซอฟต์แวร์:",
+                sec_projects: "ผลงานที่ผ่านมา (Projects)",
+                proj_1_role: "แอปพลิเคชันมือถือร้านขายเมาส์ – การออกแบบ UI/UX และ Prototype",
+                proj_1_d1: "ออกแบบและสร้างแบบจำลองหน้าจอแอปพลิเคชันอีคอมเมิร์ซสำหรับจำหน่ายเมาส์และอุปกรณ์คอมพิวเตอร์ด้วย Figma",
+                proj_1_d2: "ออกแบบขั้นตอนการทำงาน (Workflow) และ Wireframe ให้ใช้งานง่าย พร้อมฟังก์ชันจัดการสินค้า (เพิ่ม/ลบ สินค้า)",
+                btn_figma: "เปิดดูใน Figma",
+                proj_2_name: "เว็บไซต์ส้มตำสุดอร่อย (Somtam Sood Aroi Website)",
+                proj_2_role: "พัฒนาเว็บไซต์เผยแพร่วัฒนธรรมอาหารอีสาน",
+                proj_2_d1: "พัฒนาเว็บไซต์นำเสนอวัฒนธรรมอาหารอีสานและภูมิปัญญาท้องถิ่นด้วย HTML, CSS และ JavaScript",
+                proj_2_d2: "ออกแบบโครงสร้างหน้าเว็บและระบบคลังภาพเมนูอาหารให้ออกมาสวยงาม สบายตา และใช้งานง่าย",
+                btn_cert: "ดูใบประกาศรางวัล",
+                sec_certs: "กิจกรรมและใบรับรอง (Activities & Certificates)",
+                cert_zoom: "คลิกเพื่อดูรูปขยาย",
+                cert_isan_title: "รางวัลรองชนะเลิศอันดับ 1 - การแข่งขันพัฒนาเว็บไซต์",
+                cert_isan_issuer: "การแข่งขันพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน (UDRU)",
+                footer_sub: "สาขาเทคโนโลยีสารสนเทศ | มหาวิทยาลัยราชภัฏอุดรธานี",
+                modal_download: "ดาวน์โหลดไฟล์",
+                modal_close: "ปิด",
+                resume_modal_title: "Resume ฉบับทางการ - นายทวีชัย นามฮาด",
+                download_resume_pdf: "ดาวน์โหลด Resume PDF"
+            },
+            en: {
+                top_degree: "Udon Thani Rajabhat University (Information Technology)",
+                top_status: "Frontend Developer & QA Intern",
+                brand_name: "THAWEECHAI NAMHAD",
+                brand_subtitle: "INFORMATION TECHNOLOGY",
+                nav_about: "About Me",
+                nav_skills: "Skills",
+                nav_exp: "Experience",
+                nav_projects: "Projects",
+                nav_certs: "Certificates",
+                nav_edu: "Education",
+                nav_contact: "Contact",
+                nav_view_resume: "View Resume",
+                hero_status: "Open to Work / Internship",
+                hero_name: "THAWEECHAI NAMHAD",
+                hero_title: "INFORMATION TECHNOLOGY",
+                hero_year: "4th-Year Student (B.Sc. in Information Technology)",
+                btn_resume: "View & Download Resume",
+                btn_contact: "Contact Me",
+                sec_contact: "Contact Information",
+                lbl_phone: "Phone Number",
+                lbl_location: "Location",
+                val_location: "Mueang, Udon Thani, Thailand 41000",
+                sec_edu: "Education History",
+                edu_1_date: "2023 - Present",
+                edu_1_deg: "Bachelor of Science (B.Sc.)",
+                edu_1_school: "Udon Thani Rajabhat University",
+                edu_1_major: "Information Technology",
+                edu_2_date: "2020 - 2023",
+                edu_2_deg: "Vocational Certificate",
+                edu_2_school: "Udon Thani Technical College",
+                edu_3_date: "2017 - 2020",
+                edu_3_deg: "Junior High School",
+                edu_3_school: "Banmakkhaeng School",
+                sec_career: "Career Objective",
+                career_text: "Seeking opportunities to grow in <strong>Web Development</strong> (Frontend / Full-stack) and <strong>QA Testing</strong>, delivering clean, responsive, and intuitive web solutions with strong attention to code quality and user experience.",
+                sec_about: "About Me",
+                about_content: "Fourth-year Information Technology student at Udon Thani Rajabhat University with a basic background in Frontend Development and QA Testing. Have worked with React, TypeScript, Node.js, REST APIs, and Firebase through university projects and internship experience. Looking forward to gaining more practical experience, learning from a professional team, and improving my skills in web development.",
+                about_quote: '"Eager to learn modern technologies, refine engineering craftsmanship, and contribute value to software teams."',
+                sec_skills: "Technical Skills",
+                sec_exp: "Internship Experience",
+                exp_pos: "Frontend Developer & QA Intern",
+                exp_badge: "Internship",
+                exp_summary: "Worked with the software engineering team on frontend development, integrations, and QA testing:",
+                sec_projects: "Featured Projects",
+                proj_1_role: "Mouse Store Mobile App – UI/UX Design & Prototype",
+                proj_1_d1: "Designed and prototyped an e-commerce mobile app interface for mouse and computer peripherals using Figma.",
+                proj_1_d2: "Created intuitive UI/UX workflows, interactive wireframes, and product management features (add/remove items).",
+                btn_figma: "View in Figma",
+                proj_2_name: "Somtam Sood Aroi Website",
+                proj_2_role: "Isan Cuisine & Cultural Heritage Showcase Web",
+                proj_2_d1: "Developed a showcase website promoting Isan cuisine and local heritage using HTML, CSS, and JavaScript.",
+                proj_2_d2: "Designed structured layouts and interactive menu galleries to provide a seamless user experience.",
+                btn_cert: "View Award Cert",
+                sec_certs: "Activities & Certificates",
+                cert_zoom: "Click to enlarge",
+                cert_isan_title: "1st Runner-Up - Web Development Competition",
+                cert_isan_issuer: "Isan Local Wisdom Web Development Competition (Oct 2023)",
+                footer_sub: "Information Technology | Udon Thani Rajabhat University",
+                modal_download: "Download File",
+                modal_close: "Close",
+                resume_modal_title: "Official Resume - Thaweechai Namhad",
+                download_resume_pdf: "Download Resume PDF"
+            }
+        };
+
+        let currentLang = 'th';
+        const langToggle = document.getElementById('langToggle');
+        const langLabel = document.getElementById('langLabel');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            langLabel.textContent = lang === 'th' ? 'TH / EN' : 'EN / TH';
+            localStorage.setItem('portfolio_lang', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    elem.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        langToggle.addEventListener('click', () => {
+            setLanguage(currentLang === 'th' ? 'en' : 'th');
+        });
+
+        // Initialize language
+        const savedLang = localStorage.getItem('portfolio_lang') || 'th';
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
