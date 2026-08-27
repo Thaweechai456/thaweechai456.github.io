@@ -1394,30 +1394,39 @@
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
-                                <div class="timeline-date" data-i18n="edu_2_date">2020 - 2023</div>
+                                <div class="timeline-date">
+                                    <span data-i18n="edu_2_date">2020 - 2023</span>
+                                    <span class="gpa-badge">GPA: 3.60</span>
+                                </div>
                                 <div class="timeline-title" data-i18n="edu_2_deg">ประกาศนียบัตรวิชาชีพ (ปวช.)</div>
                                 <div class="timeline-subtitle" data-i18n="edu_2_school">วิทยาลัยเทคนิคอุดรธานี</div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
-                                <div class="timeline-date" data-i18n="edu_3_date">2017 - 2020</div>
+                                <div class="timeline-date">
+                                    <span data-i18n="edu_3_date">2017 - 2020</span>
+                                    <span class="gpa-badge">GPA: 3.83</span>
+                                </div>
                                 <div class="timeline-title" data-i18n="edu_3_deg">มัธยมศึกษาตอนต้น</div>
                                 <div class="timeline-subtitle" data-i18n="edu_3_school">โรงเรียนบ้านหมากแข้ง</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Career Goal / Extra Card -->
+                    <!-- Position of Interest / Career Goal Card -->
                     <div class="section-card">
                         <h2 class="section-title">
                             <span class="section-title-left">
                                 <i class="fa-solid fa-bullseye"></i>
-                                <span data-i18n="sec_career">เป้าหมายในอนาคต</span>
+                                <span data-i18n="sec_career">ตำแหน่งงานที่สนใจ</span>
                             </span>
                         </h2>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;" data-i18n="career_text">
-                            มุ่งมั่นที่จะเติบโตในสายงาน <strong>Web Development</strong> (Frontend / Full-stack) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย ปลอดภัย มีประสิทธิภาพ และมีประสบการณ์ผู้ใช้งานที่ดีเยี่ยม
+                        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: var(--radius-sm); margin-bottom: 12px;">
+                            <div style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary);" data-i18n="pos_interest">UX/UI Frontend Developer</div>
+                        </div>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;" data-i18n="career_text">
+                            มุ่งมั่นที่จะเติบโตในสายงาน <strong>UX/UI Design, Frontend Development</strong> (React / TypeScript) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย สวยงาม ทันสมัย และมีประสิทธิภาพ
                         </p>
                     </div>
 
@@ -1530,7 +1539,7 @@
                             <div class="exp-header">
                                 <div>
                                     <div class="exp-title" data-i18n="exp_pos">นักศึกษาฝึกงานตำแหน่ง Frontend Developer & QA</div>
-                                    <div class="exp-company">Next Triple Nine Co., Ltd</div>
+                                    <div class="exp-company" data-i18n="exp_company">Next Triple Nine Co., Ltd — ปากเกร็ด จ.นนทบุรี</div>
                                 </div>
                                 <span class="exp-badge" data-i18n="exp_badge">Internship</span>
                             </div>
@@ -1711,18 +1720,22 @@
                                 </div>
                             </div>
 
-                            <!-- Cert 4: Internship Certificate Info -->
-                            <div class="cert-card" style="border-left: 4px solid var(--accent);">
-                                <div class="cert-img-wrapper" style="background: linear-gradient(135deg, #1c2128 0%, #2d333b 100%);">
-                                    <i class="fa-solid fa-file-signature" style="font-size: 3rem; color: var(--header-subtext);"></i>
+                            <!-- Cert 4: Internship Certificate Next Triple Nine -->
+                            <div class="cert-card" onclick="openCertModal('internship-certificate-next-triple-nine.png', 'หนังสือรับรองการฝึกงาน (Certificate of Internship) - Next Triple Nine Co., Ltd.')">
+                                <div class="cert-img-wrapper">
+                                    <img src="internship-certificate-next-triple-nine.png" alt="หนังสือรับรองการฝึกงาน Next Triple Nine" class="cert-img">
+                                    <div class="cert-overlay">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                        <span data-i18n="cert_zoom">คลิกเพื่อดูรูปขยาย</span>
+                                    </div>
                                 </div>
                                 <div class="cert-body">
-                                    <div class="cert-date">Internship</div>
-                                    <div class="cert-title">Certificate of Internship</div>
-                                    <div class="cert-issuer">Frontend Developer & QA – Next Triple Nine Co., Ltd.</div>
+                                    <div class="cert-date">17 มิ.ย. 2569</div>
+                                    <div class="cert-title" data-i18n="cert_intern_title">หนังสือรับรองการฝึกงาน (Certificate of Internship)</div>
+                                    <div class="cert-issuer" data-i18n="cert_intern_issuer">Frontend/Web Designer/IT Support – Next Triple Nine Co., Ltd. (ปากเกร็ด นนทบุรี)</div>
                                     <div class="cert-footer">
-                                        <span class="cert-badge-pill">Experience</span>
-                                        <span><i class="fa-solid fa-briefcase" style="color: var(--accent);"></i> Industry</span>
+                                        <span class="cert-badge-pill">Internship</span>
+                                        <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Verified</span>
                                     </div>
                                 </div>
                             </div>
@@ -1964,14 +1977,16 @@
                 edu_3_date: "2017 - 2020",
                 edu_3_deg: "มัธยมศึกษาตอนต้น",
                 edu_3_school: "โรงเรียนบ้านหมากแข้ง",
-                sec_career: "เป้าหมายในอนาคต",
-                career_text: "มุ่งมั่นที่จะเติบโตในสายงาน <strong>Web Development</strong> (Frontend / Full-stack) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย ปลอดภัย มีประสิทธิภาพ และมีประสบการณ์ผู้ใช้งานที่ดีเยี่ยม",
+                sec_career: "ตำแหน่งงานที่สนใจ (Position of Interest)",
+                pos_interest: "UX/UI Frontend Developer",
+                career_text: "มุ่งมั่นที่จะเติบโตในสายงาน <strong>UX/UI Design, Frontend Development</strong> (React / TypeScript) และ <strong>QA Testing</strong> โดยเน้นการสร้างสรรค์เว็บแอปพลิเคชันที่ใช้งานง่าย สวยงาม ทันสมัย และมีประสิทธิภาพ",
                 sec_about: "เกี่ยวกับฉัน (About Me)",
                 about_content: "นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี มีพื้นฐานด้านการพัฒนา Frontend และการทดสอบซอฟต์แวร์ (QA Testing) มีความคุ้นเคยกับ React, TypeScript, Node.js, REST APIs และ Firebase จากการทำโครงงานในมหาวิทยาลัยและประสบการณ์ฝึกงาน สนใจเรียนรู้และพัฒนาทักษะด้านการพัฒนาเว็บไซต์ในเชิงปฏิบัติ พร้อมนำความรู้ไปสนับสนุนการทำงานร่วมกับทีมพัฒนาซอฟต์แวร์",
                 about_quote: '"เรียนรู้สิ่งใหม่ พัฒนาทักษะเชิงลึก พร้อมสร้างคุณค่าและทำงานร่วมกับทีมอย่างมืออาชีพ"',
                 sec_skills: "ทักษะทางเทคนิค (Technical Skills)",
                 sec_exp: "ประสบการณ์การฝึกงาน (Internship Experience)",
                 exp_pos: "นักศึกษาฝึกงานตำแหน่ง Frontend Developer & QA",
+                exp_company: "Next Triple Nine Co., Ltd — ปากเกร็ด จ.นนทบุรี",
                 exp_badge: "ฝึกงาน",
                 exp_summary: "ปฏิบัติงานจริงร่วมกับทีมพัฒนาซอฟต์แวร์ในการออกแบบ พัฒนาระบบเว็บ และทำการตรวจสอบคุณภาพซอฟต์แวร์:",
                 sec_projects: "ผลงานที่ผ่านมา (Projects)",
@@ -1988,6 +2003,8 @@
                 cert_zoom: "คลิกเพื่อดูรูปขยาย",
                 cert_isan_title: "รางวัลรองชนะเลิศอันดับ 1 - การแข่งขันพัฒนาเว็บไซต์",
                 cert_isan_issuer: "การแข่งขันพัฒนาเว็บไซต์ภูมิปัญญาท้องถิ่นภาคอีสาน (UDRU)",
+                cert_intern_title: "หนังสือรับรองการฝึกงาน (Certificate of Internship)",
+                cert_intern_issuer: "Frontend/Web Designer/IT Support – Next Triple Nine Co., Ltd. (ปากเกร็ด นนทบุรี)",
                 footer_sub: "สาขาเทคโนโลยีสารสนเทศ | มหาวิทยาลัยราชภัฏอุดรธานี",
                 modal_download: "ดาวน์โหลดไฟล์",
                 modal_close: "ปิด",
@@ -2028,14 +2045,16 @@
                 edu_3_date: "2017 - 2020",
                 edu_3_deg: "Junior High School",
                 edu_3_school: "Banmakkhaeng School",
-                sec_career: "Career Objective",
-                career_text: "Seeking opportunities to grow in <strong>Web Development</strong> (Frontend / Full-stack) and <strong>QA Testing</strong>, delivering clean, responsive, and intuitive web solutions with strong attention to code quality and user experience.",
+                sec_career: "Position of Interest",
+                pos_interest: "UX/UI Frontend Developer",
+                career_text: "Seeking opportunities to grow in <strong>UX/UI Design, Frontend Development</strong> (React / TypeScript), and <strong>QA Testing</strong>, delivering clean, responsive, and intuitive web solutions with strong attention to code quality and user experience.",
                 sec_about: "About Me",
                 about_content: "Fourth-year Information Technology student at Udon Thani Rajabhat University with a basic background in Frontend Development and QA Testing. Have worked with React, TypeScript, Node.js, REST APIs, and Firebase through university projects and internship experience. Looking forward to gaining more practical experience, learning from a professional team, and improving my skills in web development.",
                 about_quote: '"Eager to learn modern technologies, refine engineering craftsmanship, and contribute value to software teams."',
                 sec_skills: "Technical Skills",
                 sec_exp: "Internship Experience",
                 exp_pos: "Frontend Developer & QA Intern",
+                exp_company: "Next Triple Nine Co., Ltd — Pak Kret, Nonthaburi",
                 exp_badge: "Internship",
                 exp_summary: "Worked with the software engineering team on frontend development, integrations, and QA testing:",
                 sec_projects: "Featured Projects",
@@ -2052,6 +2071,8 @@
                 cert_zoom: "Click to enlarge",
                 cert_isan_title: "1st Runner-Up - Web Development Competition",
                 cert_isan_issuer: "Isan Local Wisdom Web Development Competition (Oct 2023)",
+                cert_intern_title: "Certificate of Internship",
+                cert_intern_issuer: "Frontend/Web Designer/IT Support – Next Triple Nine Co., Ltd. (Pak Kret, Nonthaburi)",
                 footer_sub: "Information Technology | Udon Thani Rajabhat University",
                 modal_download: "Download File",
                 modal_close: "Close",
